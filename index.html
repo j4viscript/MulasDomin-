@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin:0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"
+        integrity="sha512-3RlxD1bW34eFKPwj9gUXEWtdSMC59QqIqHnD8O/NoTwSJhgxRizdcFVQhUMFyTp5RwLTDL0Lbcqtl8b7bFAzog=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        function setup() {
+            createCanvas(600, 250);
+          }
+          //Dibujar fichas
+          function draw() {
+            background(55);
+            
+            //Mula en blanco
+            ficha(50, 50, 60, 120)
+            stroke(0); 
+            line(50, 115, 110, 115);
+
+            //Mula de 1
+            ficha(120, 50, 60, 120);
+            puntitos(150, 85, 1);
+            stroke(0); 
+            line(120, 115, 185, 115);
+            puntitos(150, 145, 1);
+            
+            //Mula de 2
+            ficha(190, 50, 60, 120);
+            puntitos(220, 85, 2);
+            stroke(0); 
+            line(190, 115, 250, 115);
+            puntitos(220, 145, 2);
+
+            //Mula de 3
+            ficha(260, 50, 60, 120);
+            puntitos(290, 85, 3);
+            stroke(0); 
+            line(260, 115, 320, 115);
+            puntitos(290, 145, 3);
+            //Mula de 4
+
+            ficha(330, 50, 60, 120);
+            puntitos(360, 85, 4);
+            stroke(0); 
+            line(330, 115, 390, 115);
+            puntitos(360, 145, 4);
+
+            //Mula de 5
+            ficha(400, 50, 60, 120);
+            puntitos(430, 85, 5);
+            stroke(0); 
+            line(400, 115, 460, 115);
+            puntitos(430, 145, 5);
+
+            //Mula 6
+            ficha(470, 50, 60, 120);
+            puntitos(500, 75, 6);
+            stroke(0); 
+            line(470, 115, 530, 115);
+            puntitos(500, 135, 6);
+          }
+          //Dibujar ficha
+          function ficha(x, y, w, h) {
+            push();
+            translate(x, y);
+            fill(255);
+            rect(0, 0, w, h, 2);
+            pop();
+          }
+          //dibujar puntos
+          function puntitos(x, y, puntos) {
+            noStroke();
+            fill(0);
+            if (puntos % 2 === 1) {
+              ellipse(x, y, 10);
+            }
+            if (puntos >= 2) {
+              ellipse(x - 15, y + 9, 10);
+              ellipse(x + 15, y - 9, 10);
+            }
+            if (puntos >= 4) {
+              ellipse(x + 15, y + 9, 10);
+              ellipse(x - 15, y - 9, 10);
+            }
+            if (puntos >= 6) {
+              ellipse(x - 15, y + 9,10);
+              ellipse(x + 15, y - 9, 10);
+              ellipse(x - 15, y + 27, 10);
+              ellipse(x + 15, y - -27, 10);
+            }
+          }          
+    </script>
+</body>
+
+</html>
